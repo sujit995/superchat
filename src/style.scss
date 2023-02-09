@@ -34,6 +34,9 @@ body, html {
       flex-direction: column;
       gap: 10px;
       align-items: center;
+      @include mobile{
+        width: 200px;
+      }
   
       .logo {
         color: #075E54;
@@ -115,6 +118,9 @@ body, html {
         flex: 1;
         background-color: #075E54;
         position: relative;
+        @include mobile{
+          width: 80px;
+        }
   
         .navbar {
           display: flex;
@@ -194,16 +200,26 @@ body, html {
             height: 50px;
             border-radius: 50%;
             object-fit: cover;
+            @include mobile{
+              height: 24px;
+              width: 24px;
+            }
           }
   
           .userChatInfo {
             span {
               font-size: 18px;
               font-weight: 500;
+              @include mobile{
+                font-size: 12px;
+              }
             }
             p {
               font-size: 14px;
               color: white;
+              @include mobile{
+                font-size: 10px;
+              }
             }
           }
         }
