@@ -73,6 +73,13 @@ const Input = () => {
     setText("");
     setImg(null);
   };
+
+  const handleInputEnter = (e) => {
+    if (e.code === 'Enter') {
+        handleSend();
+    }
+};
+
   return (
     <div className="input">
       <input
@@ -80,6 +87,7 @@ const Input = () => {
         placeholder="Type something..."
         onChange={(e) => setText(e.target.value)}
         value={text}
+        onKeyUp={handleInputEnter}
       />
       <div className="send">
         <input
@@ -87,6 +95,7 @@ const Input = () => {
           style={{ display: "none" }}
           id="file"
           onChange={(e) => setImg(e.target.files[0])}
+          onKeyUp={handleInputEnter}
         />
         <label htmlFor="file">
           <img src={Img} alt="" />
